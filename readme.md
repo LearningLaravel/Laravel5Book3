@@ -1,10 +1,10 @@
 ## Laravel 5 Book App
 
-Laravel 5 Book App is a starter template for your Laravel applications.
+Laravel 5 Book App is a starter template for your Laravel applications. 
 
 ## Learning Laravel 5 Book
 
-Learning Laravel 5 Book can be found on the [Learning Laravel website](https://learninglaravel.net/laravelbook).
+Learning Laravel 5, 3rd Edition Book can be found on the [Learning Laravel website](https://learninglaravel.net/laravelbook).
 
 ## Translation
 
