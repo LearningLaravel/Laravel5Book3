@@ -1,23 +1,13 @@
 @extends('master')
-@section('title', 'View a ticket')
+@section('title', 'View a post')
 @section('content')
 
     <div class="container col-md-8 col-md-offset-2">
         <div class="well well bs-component">
             <div class="content">
-                <h2 class="header">{!! $ticket->title !!}</h2>
-                <p> <strong>Status</strong>: {!! $ticket->status ? 'Pending' : 'Answered' !!}</p>
-                <p> {!! $ticket->content !!} </p>
+                <h2 class="header">{!! $post->title !!}</h2>
+                <p> {!! $post->content !!} </p>
             </div>
-            <a href="{!! action('TicketsController@edit', $ticket->slug) !!}" class="btn btn-info pull-left">Edit</a>
-
-            <form method="post" action="{!! action('TicketsController@destroy', $ticket->slug) !!}" class="pull-left">
-                <input type="hidden" name="_token" value="{!! csrf_token() !!}">
-                <div>
-                    <button type="submit" class="btn btn-warning">Delete</button>
-                </div>
-            </form>
-
             <div class="clearfix"></div>
         </div>
 
@@ -43,11 +33,11 @@
                 @endif
 
                 <input type="hidden" name="_token" value="{!! csrf_token() !!}">
-                <input type="hidden" name="post_id" value="{!! $ticket->id !!}">
-                <input type="hidden" name="post_type" value="App\Ticket">
+                <input type="hidden" name="post_id" value="{!! $post->id !!}">
+                <input type="hidden" name="post_type" value="App\Post">
 
                 <fieldset>
-                    <legend>Reply</legend>
+                    <legend>Comment</legend>
                     <div class="form-group">
                         <div class="col-lg-12">
                             <textarea class="form-control" rows="3" id="content" name="content"></textarea>
@@ -63,7 +53,6 @@
                 </fieldset>
             </form>
         </div>
-
     </div>
 
 @endsection
